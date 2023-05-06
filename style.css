@@ -1,0 +1,167 @@
+@import './src/styles/normalize.css';
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu:wght@400;700&display=swap');
+
+:root {
+  --bgColor: #f2f2f2;
+  --btnColor: #222;
+  --white: #fff;
+  --transition: all 0.3s linear;
+  --radius: 0.25rem;
+}
+
+html {
+  box-sizing: border-box;
+  font-size: 62.5%; /* 1 rem = 10px */
+  background-color: var(--bgColor);
+}
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Ubuntu', sans-serif;
+}
+
+.container {
+  width: min(95%, 120rem);
+  margin-left: auto;
+  margin-right: auto;
+}
+@media (min-width: 768px){
+  .container {
+    width: min(100%, 60rem);
+    
+  }
+}
+
+.container__form {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 50vh;
+  flex-direction: column;
+}
+
+.container__form-input {
+  width: 90%;
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+  border: none;
+  outline: none;
+  background: none;
+  border-bottom: 2px solid #1da1f2;
+  padding: 0.5rem 0.5rem;
+}
+.container__form-input::placeholder {
+  text-align: center;
+}
+@media (min-width: 768px){
+  .container__form-input {
+    width: auto;
+    
+  }
+}
+
+.container__form-button {
+  width: 100%;
+  display: inline-block;
+  background: transparent;
+  text-transform: uppercase;
+  color: var(--btnColor);
+  padding: 0.75rem 0.5rem;
+  letter-spacing: 1px;
+  font-size: 1.5rem;
+  font-weight: 700;
+  border: 2px solid var(--btnColor);
+  cursor: pointer;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+  border-radius: 0.25rem;
+  transition: all 0.3s linear;
+}
+.container__form-button:hover {
+  color: var(--white);
+  background: var(--btnColor);
+}
+@media (min-width: 768px){
+  .container__form-button {
+    width: auto;
+    
+  }
+}
+
+.container__form-p {
+  margin-top: 3.5rem;
+  text-align: center;
+  font-size: 2rem;
+}
+
+.no-palindrome {
+  color: #dc3545;
+  animation: no-palindrome 0.7s linear both;
+}
+@keyframes no-palindrome {
+  0%,
+  100% {
+    transform: rotate(0deg);
+    transform-origin: 50% 50%;
+  }
+  10% {
+    transform: rotate(8deg);
+  }
+  20%,
+  40%,
+  60% {
+    transform: rotate(-10deg);
+  }
+  30%,
+  50%,
+  70% {
+    transform: rotate(10deg);
+  }
+  80% {
+    transform: rotate(-8deg);
+  }
+  90% {
+    transform: rotate(8deg);
+  }
+}
+
+.is-palindrome {
+  color: #198754;
+  animation: is-palindrome 0.7s linear both;
+}
+@keyframes is-palindrome {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  10%,
+  30%,
+  50%,
+  70% {
+    transform: translateY(-8px);
+  }
+  20%,
+  40%,
+  60% {
+    transform: translateY(8px);
+  }
+  80% {
+    transform: translateY(6.4px);
+  }
+  90% {
+    transform: translateY(-6.4px);
+  }
+}
+
+.true {
+  cursor: not-allowed;
+  opacity: 0.5;
+}
